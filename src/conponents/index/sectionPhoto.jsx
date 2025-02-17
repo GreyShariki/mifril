@@ -1,5 +1,4 @@
-import Section from "./sections/section";
-import Img from "./Img";
+import Img from "../Img";
 import photo1 from "/photo1.jpg";
 import photo2 from "/photo2.png";
 import photo3 from "/photo3.jpeg";

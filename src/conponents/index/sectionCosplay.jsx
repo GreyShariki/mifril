@@ -1,9 +1,9 @@
-import Section from "./sections/section";
-import Img from "./Img";
+import Section from "../sections/section";
+import Img from "../Img";
 import maska from "/maska.jpg";
 const SectionCosplay = () => {
   return (
-    <Section secondElement={<Img src={maska}></Img>}>
+    <Section fluid={true} secondElement={<Img src={maska}></Img>}>
       <>
         <h3>"Не просто костюм"</h3>
         <p>

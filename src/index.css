@@ -34,7 +34,9 @@ body{
     cursor: pointer;
     transition: all 0.3s;
     font-weight: bold;
-    margin-left: 1rem;
     background: #46467d;
     color: white;
+}
+footer{
+	background: #46467d;
 }

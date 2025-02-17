@@ -1,4 +1,4 @@
-import Section from "./sections/section";
+import Section from "../sections/section";
 
 const SectionMap = () => {
   return (
