@@ -90,7 +90,7 @@ const Footer = () => {
                   Геншин
                 </a>
               </li>
-              <li class="nav-item mb-2">
+              <li className="nav-item mb-2">
                 <a href="#" class="nav-link p-0 text-muted">
                   Геншин
                 </a>

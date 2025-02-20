@@ -1,6 +1,12 @@
-const MyButton = ({ children, className, onClick, ...props }) => {
+const MyButton = ({ children, className, isActive, onClick, ...props }) => {
   return (
-    <button {...props} className={`${className} button`} onClick={onClick}>
+    <button
+      {...props}
+      className={
+        isActive ? `${className} active button` : `${className} button`
+      }
+      onClick={onClick}
+    >
       {children}
     </button>
   );
