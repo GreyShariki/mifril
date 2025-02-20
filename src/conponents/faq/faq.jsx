@@ -2,7 +2,6 @@ import { Col } from "react-bootstrap";
 import MyButton from "../button/button";
 import { useState } from "react";
 import { dataQuestions, dataAnsvers, dataQuestions1 } from "./data.js";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 import React from "react";
 import "../../index.css";
 
@@ -21,7 +20,7 @@ const Faq = () => {
 
   return (
     <div className="container m-5">
-      <div className="row">
+      <div className="row justify-content-start">
         <Col xs={2}>
           {dataQuestions.map((question) => (
             <MyButton

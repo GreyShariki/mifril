@@ -6,7 +6,7 @@ import Index from "./conponents/index.jsx";
 import Footer from "./footer.jsx";
 import SectionFaq from "./conponents/faq/faqstr.jsx";
 import { useState } from "react";
-import SectionShop from "./conponents/sectionShop.jsx";
+import SectionShop from "./shop/sectionShop.jsx";
 function App() {
   const [tab, setTab] = useState("index");
 

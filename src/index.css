@@ -52,8 +52,8 @@ footer{
 }
 .headerDefault{
 	height: 25em;
-	background:linear-gradient(180deg, rgba(20, 20, 20, 0.6) 78.8%, #141414 100%);
 	background-size:cover;
+	padding: 0!important;
 }
 .block{
 	padding: 0.8rem 2rem;
@@ -79,3 +79,34 @@ footer{
 	}
 
 }
+/* Анимация карточек */
+.card-animation-enter {
+	opacity: 0;
+	transform: scale(0.9);
+  }
+  
+  .card-animation-enter-active {
+	opacity: 1;
+	transform: scale(1);
+	transition: all 500ms;
+  }
+  
+  .card-animation-exit {
+	opacity: 1;
+	transform: scale(1);
+  }
+  
+  .card-animation-exit-active {
+	opacity: 0;
+	transform: scale(0.9);
+	transition: all 500ms;
+  }
+  
+  /* Для правильного позиционирования анимируемых элементов */
+  .justify-content-start {
+	position: relative;
+  }
+  
+  .card-animation {
+	transition: all 500ms;
+  }
