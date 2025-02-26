@@ -5,7 +5,6 @@ import ShopHead from "/backkat.jpg";
 import CardShop from "../conponents/card/cardShop";
 import { data } from "./data.jsx";
 import { useState } from "react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 const SectionShop = () => {
   const [tab, setTab] = useState("Все товары");
   const category = ["Все товары", "Костюмы", "Оружие", "Аксессуары", "Парики"];

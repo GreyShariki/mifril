@@ -15,7 +15,7 @@ const MyNavbar = ({ onClick }) => {
             onClick={() => onClick("index")}
             className="custom-nav-link"
             href="#"
-            eventKey="home"
+            eventKey="index"
           >
             ГЛАВНАЯ
           </Nav.Link>

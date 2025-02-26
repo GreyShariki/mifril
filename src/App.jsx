@@ -7,6 +7,7 @@ import Footer from "./footer.jsx";
 import SectionFaq from "./conponents/faq/faqstr.jsx";
 import { useState } from "react";
 import SectionShop from "./shop/sectionShop.jsx";
+import SectionRegister from "./conponents/register.jsx";
 function App() {
   const [tab, setTab] = useState("index");
 
@@ -19,6 +20,7 @@ function App() {
         {tab === "index" && <Index></Index>}
         {tab === "shop" && <SectionShop></SectionShop>}
         {tab === "faq" && <SectionFaq></SectionFaq>}
+        {tab === "profile" && <SectionRegister />}
       </main>
       <Footer />
     </>
