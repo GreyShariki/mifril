@@ -1,30 +1,49 @@
 import MyNavbar from "./conponents/nav/navbar.jsx";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import MyHeader from "./conponents/header/myHeader.jsx";
-import Index from "./conponents/index.jsx";
+import Index from "./conponents/pages/index.jsx";
 import Footer from "./footer.jsx";
 import SectionFaq from "./conponents/faq/faqstr.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SectionShop from "./shop/sectionShop.jsx";
-import SectionRegister from "./conponents/register.jsx";
+import { BrowserRouter, useLocation } from "react-router-dom";
+import SectionLogin from "./conponents/login.jsx";
+import { NotFound } from "./conponents/pages/notFound.jsx";
+
 function App() {
-  const [tab, setTab] = useState("index");
+  const location = useLocation();
+  const [tab, setTab] = useState("/");
+
+  useEffect(() => {
+    const path = location.pathname.slice(1); // Убираем первый слэш
+    if (path === "" || ["shop", "faq", "profile"].includes(path)) {
+      setTab(path || "/"); // Если path пустой, устанавливаем "/"
+    } else {
+      setTab("notFound");
+    }
+  }, [location]);
 
   return (
     <>
       <MyNavbar onClick={(current) => setTab(current)} />
-      {tab === "index" && <MyHeader />}
-
       <main>
-        {tab === "index" && <Index></Index>}
-        {tab === "shop" && <SectionShop></SectionShop>}
-        {tab === "faq" && <SectionFaq></SectionFaq>}
-        {tab === "profile" && <SectionRegister />}
+        {tab === "/" && <Index />}
+        {tab === "shop" && <SectionShop />}
+        {tab === "faq" && <SectionFaq />}
+        {tab === "profile" && <SectionLogin />}
+        {tab === "notFound" && <NotFound />}
       </main>
       <Footer />
     </>
   );
 }
 
-export default App;
+function AppWrapper() {
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+}
+
+export default AppWrapper;

@@ -2,7 +2,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "/1.png";
 import Container from "react-bootstrap/Container";
-
+import { Link } from "react-router-dom";
 const MyNavbar = ({ onClick }) => {
   return (
     <Navbar expand="lg" data-bs-theme="dark" className="">
@@ -12,17 +12,19 @@ const MyNavbar = ({ onClick }) => {
         </div>
         <Nav justify className="w-100" variant="tabs" data-bs-theme="dark">
           <Nav.Link
-            onClick={() => onClick("index")}
+            as={Link}
+            to="/"
+            onClick={() => onClick("/")}
             className="custom-nav-link"
-            href="#"
-            eventKey="index"
+            eventKey="/"
           >
             ГЛАВНАЯ
           </Nav.Link>
           <Nav.Link
+            as={Link}
+            to="/shop"
             onClick={() => onClick("shop")}
             className="custom-nav-link"
-            href="#"
             eventKey="shop"
           >
             КАТАЛОГ
@@ -37,24 +39,30 @@ const MyNavbar = ({ onClick }) => {
           </Nav.Link>
 
           <Nav.Link
+            as={Link}
+            to="/profile"
             onClick={() => onClick("profile")}
             className="custom-nav-link"
-            href="#"
+            href="#login"
             eventKey="profile"
           >
             ПРОФИЛЬ
           </Nav.Link>
 
           <Nav.Link
+            as={Link}
+            to="/shop1"
             onClick={() => onClick("shop1")}
             className="custom-nav-link"
-            href="#"
+            href="#shop1"
             eventKey="shop1"
           >
             КОРЗИНА
           </Nav.Link>
 
           <Nav.Link
+            as={Link}
+            to="/out"
             onClick={() => onClick("out")}
             className="custom-nav-link"
             href="#"
@@ -64,9 +72,11 @@ const MyNavbar = ({ onClick }) => {
           </Nav.Link>
 
           <Nav.Link
+            as={Link}
+            to="/faq"
             onClick={() => onClick("faq")}
             className="custom-nav-link"
-            href="#"
+            href="#faq"
             eventKey="faq"
           >
             FAQ
