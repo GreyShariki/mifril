@@ -9,15 +9,16 @@ import SectionShop from "./shop/sectionShop.jsx";
 import { BrowserRouter, useLocation } from "react-router-dom";
 import SectionLogin from "./conponents/login.jsx";
 import { NotFound } from "./conponents/pages/notFound.jsx";
+import { Profile } from "./conponents/pages/profile.jsx";
 
 function App() {
   const location = useLocation();
   const [tab, setTab] = useState("/");
 
   useEffect(() => {
-    const path = location.pathname.slice(1); // Убираем первый слэш
-    if (path === "" || ["shop", "faq", "profile"].includes(path)) {
-      setTab(path || "/"); // Если path пустой, устанавливаем "/"
+    const path = location.pathname.slice(1);
+    if (path === "" || ["shop", "faq", "profile", "cabinet"].includes(path)) {
+      setTab(path || "/");
     } else {
       setTab("notFound");
     }
@@ -32,6 +33,8 @@ function App() {
         {tab === "faq" && <SectionFaq />}
         {tab === "profile" && <SectionLogin />}
         {tab === "notFound" && <NotFound />}
+        {tab === "cabinet" && <Profile />}
+        {tab === "out" && <Index />}
       </main>
       <Footer />
     </>

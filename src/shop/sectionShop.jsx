@@ -18,7 +18,7 @@ const SectionShop = () => {
               key={el}
               isActive={tab === el}
               onClick={() => setTab(el)}
-              className={"w-75 mb-1"}
+              className={"w-75 mb-2"}
             >
               {el}
             </MyButton>

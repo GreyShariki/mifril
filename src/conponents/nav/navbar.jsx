@@ -10,7 +10,13 @@ const MyNavbar = ({ onClick }) => {
         <div as={Navbar.Brand} className="p-0">
           <img src={logo} alt="" />
         </div>
-        <Nav justify className="w-100" variant="tabs" data-bs-theme="dark">
+        <Nav
+          justify
+          className="w-100"
+          variant="tabs"
+          defaultActiveKey="/"
+          data-bs-theme="dark"
+        >
           <Nav.Link
             as={Link}
             to="/"
@@ -48,7 +54,16 @@ const MyNavbar = ({ onClick }) => {
           >
             ПРОФИЛЬ
           </Nav.Link>
-
+          <Nav.Link
+            as={Link}
+            to="/cabinet"
+            onClick={() => onClick("cabinet")}
+            className="custom-nav-link"
+            href="#cabinet"
+            eventKey="cabinet"
+          >
+            ProfileDev
+          </Nav.Link>
           <Nav.Link
             as={Link}
             to="/shop1"
@@ -58,17 +73,6 @@ const MyNavbar = ({ onClick }) => {
             eventKey="shop1"
           >
             КОРЗИНА
-          </Nav.Link>
-
-          <Nav.Link
-            as={Link}
-            to="/out"
-            onClick={() => onClick("out")}
-            className="custom-nav-link"
-            href="#"
-            eventKey="out"
-          >
-            ВЫЙТИ
           </Nav.Link>
 
           <Nav.Link

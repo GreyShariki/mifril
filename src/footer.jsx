@@ -2,7 +2,7 @@ import logo from "/1.png";
 import Img from "./conponents/Img";
 const Footer = () => {
   return (
-    <footer class="footer">
+    <footer class="footer w-100">
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5">
           <div class="col mb-4">
