@@ -7,7 +7,10 @@ app.use(cors());
 app.use(express.json());
 
 const registerRouter = require("./routes/register");
+const loginRouter = require("./routes/login");
+
 app.use("/api", registerRouter);
+app.use("/api", loginRouter);
 
 db.sequelize.sync().then(() => {
   app.listen(3001, () => {

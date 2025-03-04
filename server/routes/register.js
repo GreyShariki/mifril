@@ -5,12 +5,6 @@ const { where } = require("sequelize");
 
 router.post("/register", async (req, res) => {
   const { lname, fname, password, email, country } = req.body;
-  const existingUser = await db.users.findOne({ where: { email } });
-  if (existingUser) {
-    res
-      .status(400)
-      .json({ massage: "Пользователь с таким email уже существует" });
-  }
   const newUser = await db.users.create({
     lname,
     fname,
