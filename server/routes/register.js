@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
-const { where } = require("sequelize");
 
 router.post("/register", async (req, res) => {
   const { lname, fname, password, email, country } = req.body;

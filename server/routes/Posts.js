@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.json("Cfyz gbljh");
+router.get("/aaa", (req, res) => {
+  res.status(200).json({ massage: "Пошёл нахуй, Артемий" });
 });
 
 module.exports = router;
