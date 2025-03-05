@@ -1,5 +1,7 @@
 const express = require("express");
-const db = require("../models");
 const router = express.Router();
 
-router;
+router.get("/adminPanel", (req, res) => {
+  res.render("update");
+});
+module.exports = router;
