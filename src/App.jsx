@@ -14,10 +14,10 @@ import { Profile } from "./conponents/pages/profile.jsx";
 function App() {
   const location = useLocation();
   const [tab, setTab] = useState("/");
-
+  let token = document.cookie;
   useEffect(() => {
     const path = location.pathname.slice(1);
-    if (path === "" || ["shop", "faq", "profile", "cabinet"].includes(path)) {
+    if (path === "" || ["shop", "faq", "profile"].includes(path)) {
       setTab(path || "/");
     } else {
       setTab("notFound");
@@ -31,9 +31,8 @@ function App() {
         {tab === "/" && <Index />}
         {tab === "shop" && <SectionShop />}
         {tab === "faq" && <SectionFaq />}
-        {tab === "profile" && <SectionLogin />}
+        {tab === "profile" && (token ? <Profile /> : <SectionLogin />)}
         {tab === "notFound" && <NotFound />}
-        {tab === "cabinet" && <Profile />}
         {tab === "out" && <Index />}
       </main>
       <Footer />

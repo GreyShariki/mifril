@@ -54,16 +54,7 @@ const MyNavbar = ({ onClick }) => {
           >
             ПРОФИЛЬ
           </Nav.Link>
-          <Nav.Link
-            as={Link}
-            to="/cabinet"
-            onClick={() => onClick("cabinet")}
-            className="custom-nav-link"
-            href="#cabinet"
-            eventKey="cabinet"
-          >
-            ProfileDev
-          </Nav.Link>
+
           <Nav.Link
             as={Link}
             to="/shop1"

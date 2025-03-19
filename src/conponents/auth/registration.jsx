@@ -24,7 +24,6 @@ const SectionRegistration = ({ setTab }) => {
     const { name, value } = element.target;
     setData({ ...data, [name]: value });
 
-    // Сбрасываем ошибки при изменении полей
     setEmailValid(false);
     setPasswordRepValid(false);
     setPasswordValid(false);
@@ -33,14 +32,12 @@ const SectionRegistration = ({ setTab }) => {
   const handleSubmit = async () => {
     const { email, password, repeatPassword, lname, fname, country } = data;
 
-    // Валидация email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setEmailValid(true);
       return;
     }
 
-    // Валидация пароля
     const passwordRegex =
       /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*_]{6,}/;
     if (!passwordRegex.test(password)) {
@@ -48,13 +45,11 @@ const SectionRegistration = ({ setTab }) => {
       return;
     }
 
-    // Проверка совпадения паролей
     if (password !== repeatPassword) {
       setPasswordRepValid(true);
       return;
     }
 
-    // Проверка на пустые поля
     const hasEmptyFields = Object.values(data).some((value) => !value);
     if (hasEmptyFields) {
       alert("Заполни все поля, Артемий");
@@ -66,7 +61,7 @@ const SectionRegistration = ({ setTab }) => {
       const userData = { email, password, lname, fname, country };
       await registerUser(userData);
       alert("Регистрация успешна");
-      navigate("/cabinet"); // Перенаправляем пользователя
+      navigate("/cabinet");
     } catch (error) {
       alert(error.message || "Ошибка при регистрации");
     } finally {

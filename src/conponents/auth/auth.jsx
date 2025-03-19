@@ -26,7 +26,7 @@ const SectionAuth = ({ setTab }) => {
     try {
       const response = await loginUser(email, password);
       alert("Вход успешен");
-      navigate("/cabinet");
+      navigate("/profile");
     } catch (error) {
       setLoginValid(true);
       console.error("Ошибка при входе:", error);

@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    prise: {
+    price: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
