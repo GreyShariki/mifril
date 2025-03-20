@@ -57,11 +57,11 @@ const MyNavbar = ({ onClick }) => {
 
           <Nav.Link
             as={Link}
-            to="/shop1"
-            onClick={() => onClick("shop1")}
+            to="/cart"
+            onClick={() => onClick("cart")}
             className="custom-nav-link"
-            href="#shop1"
-            eventKey="shop1"
+            href="#cart"
+            eventKey="cart"
           >
             КОРЗИНА
           </Nav.Link>

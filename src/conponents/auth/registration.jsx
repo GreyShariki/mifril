@@ -61,7 +61,6 @@ const SectionRegistration = ({ setTab }) => {
       const userData = { email, password, lname, fname, country };
       await registerUser(userData);
       alert("Регистрация успешна");
-      navigate("/cabinet");
     } catch (error) {
       alert(error.message || "Ошибка при регистрации");
     } finally {

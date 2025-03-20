@@ -4,6 +4,8 @@ import { Col, Row, Form } from "react-bootstrap";
 import MyButton from "../button/button";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import OrderList from "./buys.jsx";
+
 export const Profile = () => {
   const [adminData, setAdminData] = useState({
     name: "",
@@ -172,14 +174,7 @@ export const Profile = () => {
                 </MyButton>
               </Form>
             ) : (
-              <div>
-                <h3>Ваши заказы</h3>
-                <ul>
-                  <li>Дата: </li>
-                  <li>Сумма: </li>
-                  <li>Товары: </li>
-                </ul>
-              </div>
+              <OrderList></OrderList>
             ))}
         </Col>
       </Row>

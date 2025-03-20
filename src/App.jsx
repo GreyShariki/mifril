@@ -10,6 +10,8 @@ import { BrowserRouter, useLocation } from "react-router-dom";
 import SectionLogin from "./conponents/login.jsx";
 import { NotFound } from "./conponents/pages/notFound.jsx";
 import { Profile } from "./conponents/pages/profile.jsx";
+import OrderList from "./conponents/pages/buys.jsx";
+import CartSection from "./conponents/pages/userShop.jsx";
 
 function App() {
   const location = useLocation();
@@ -17,7 +19,10 @@ function App() {
   let token = document.cookie;
   useEffect(() => {
     const path = location.pathname.slice(1);
-    if (path === "" || ["shop", "faq", "profile"].includes(path)) {
+    if (
+      path === "" ||
+      ["shop", "faq", "profile", "cart", "shop1"].includes(path)
+    ) {
       setTab(path || "/");
     } else {
       setTab("notFound");
@@ -31,7 +36,9 @@ function App() {
         {tab === "/" && <Index />}
         {tab === "shop" && <SectionShop />}
         {tab === "faq" && <SectionFaq />}
+        {tab === "cart" && <CartSection />}
         {tab === "profile" && (token ? <Profile /> : <SectionLogin />)}
+        {tab === "shop1" && (token ? <OrderList /> : <SectionLogin />)}
         {tab === "notFound" && <NotFound />}
         {tab === "out" && <Index />}
       </main>

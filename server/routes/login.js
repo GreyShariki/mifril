@@ -10,11 +10,11 @@ router.post("/login", async (req, res) => {
     return res.status(401).json({ message: "Неверный пароль" });
   }
 
-  const token = jwt.sign({ login }, "verySecret", { expiresIn: "15m" });
+  const token = jwt.sign({ login }, "verySecret", { expiresIn: "180m" });
   res.cookie("token", token, {
     secure: false,
     sameSite: "lax",
-    maxAge: 15 * 60 * 1000,
+    maxAge: 180 * 60 * 1000,
     domain: "localhost",
   });
   return res.status(200).json({ message: login });

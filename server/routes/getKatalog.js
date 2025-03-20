@@ -1,12 +1,12 @@
 const express = require("express");
-const jwt = require("jsonwebtoken");
+const db = require("../models");
+
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const token = req.cookies.token;
-    const decoded = jwt.verify(token, "verySecret");
-    res.status(200).json(decoded);
+    const data = await db.katalog.findAll();
+    res.status(200).json(data);
   } catch (error) {
     console.log("Ошибка: ", error);
     res.status(500).send("Произошла ошибка при выгрузке данных");
